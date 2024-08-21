@@ -331,3 +331,6 @@ venv/*
 /__pycache__/*
 *.sqlite3
 db.sqlite3
+/venv/
+/site_web/profile_pictures/
+/.idea/

@@ -1,9 +1,11 @@
+{% load static %}
+
 {% include 'base.html' %}
 
 {% block main %}
     <H2>Profil</H2>
     {% for profil in profils %}
-        <img src="{{ profil.photo }}" alt="Photo">
+        <img src="{% static profil.photo %}" alt="Photo" id="photo-profil" oncontextmenu="return false;">
         
     <p>
          {{ profil.nom}}
@@ -17,6 +19,7 @@
 
 
     <h2>Experiences</h2>
+
     <h2>Compétences</h2>
     <h2>Hobbis</h2>
 {% endblock %}

@@ -6,9 +6,9 @@ class Profil(models.Model):
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=50)
     email = models.EmailField()
-    photo = models.ImageField(upload_to="profile_pictures",null=True)
-    tel_mobile= models.CharField(max_length=11, blank=True,null=True)
-    lien=models.CharField(max_length=50,null=True,blank=True)
+    photo = models.ImageField(upload_to="profile_pictures/", null=True, blank=True)
+    tel_mobile = models.CharField(max_length=11, blank=True, null=True)
+    lien = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return f'{self.nom} {self.prenom} {self.email}'

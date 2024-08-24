@@ -6,20 +6,42 @@
     <H2>Profil</H2>
     {% for profil in profils %}
         <img src="{% static profil.photo %}" alt="Photo" id="photo-profil" oncontextmenu="return false;">
-        
-    <p>
-         {{ profil.nom}}
-    </p>
-    <p>
 
-         {{ profil.prenom }}
-    </p>
+        <p>
+            {{ profil.nom }}
+        </p>
+        <p>
+
+            {{ profil.prenom }}
+        </p>
 
     {% endfor %}
 
-
+    {#    Experiences #}
     <h2>Experiences</h2>
-
+    {% for experience in experiences %}
+        {{ experience.annee }}
+        {{ experience.entreprise }}
+        {{ experience.titre_poste }}
+        {{ experience.competence_entreprise }}
+    {% endfor %}
+    {#    Compétences #}
     <h2>Compétences</h2>
+    {% for competence in competences %}
+        {{ competence.titre }}
+        {{ competence.niveau }}
+    {% endfor %}
+
+    {#    Hobbis #}
     <h2>Hobbis</h2>
+    {% for hobby in hobbies %}
+        {{ hobby.titre }}
+
+    {% endfor %}
+{# Langue #}
+    <h2>Langue</h2>
+    {% for language in languages %}
+    	{{ language.langue }}
+    {% endfor %}
+
 {% endblock %}

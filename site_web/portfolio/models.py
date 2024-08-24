@@ -15,6 +15,7 @@ class Profil(models.Model):
 
 
 class Competence(models.Model):
+    profil = models.ForeignKey(Profil, on_delete=models.CASCADE)
     titre = models.CharField(max_length=25)
     niveau = models.IntegerField()
 
@@ -23,16 +24,19 @@ class Competence(models.Model):
 
 
 class Experience(models.Model):
-    annee = models.DateField()
+    profil = models.ForeignKey(Profil, on_delete=models.CASCADE)
+    debut = models.DateField()
+    fin = models.DateField()
     entreprise = models.CharField(max_length=25)
     titre_poste = models.CharField(max_length=50)
     competence_entreprise = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.annee} {self.entreprise} {self.titre_poste}'
+        return f'{self.fin} {self.entreprise} {self.titre_poste}'
 
 
 class Hobbie(models.Model):
+    profil = models.ForeignKey(Profil, on_delete=models.CASCADE)
     titre = models.CharField(max_length=25)
 
     def __str__(self):
@@ -40,6 +44,7 @@ class Hobbie(models.Model):
 
 
 class Language(models.Model):
+    profil = models.ForeignKey(Profil, on_delete=models.CASCADE)
     langue = models.CharField(max_length=50)
 
     def __str__(self):

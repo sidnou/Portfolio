@@ -18,7 +18,8 @@ Including another URLconf
 from django.urls import path
 
 from . import views
+from .views import PortfolioView
 
 urlpatterns = [
-    path('', views.portfolio, name='portfolio'),
+    path('', PortfolioView.as_view(), name='portfolio'),
 ]

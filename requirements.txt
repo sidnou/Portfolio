@@ -4,3 +4,4 @@ pillow==10.4.0
 pip==24.2
 sqlparse==0.5.1
 tzdata==2024.1
+Django-environ==0.11.2

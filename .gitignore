@@ -1,6 +1,10 @@
-/venv/
+venv/
 /site_web/*.sqlite3
 /site_web/profile_pictures/*.jpg
 /site_web/profile_pictures/*.png
 /site_web/profile_pictures/*.jpeg
+.env
+.env/
+.idea/
+__pycache__
 

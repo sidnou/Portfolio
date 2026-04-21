@@ -58,6 +58,7 @@ cd Portfolio
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
+
 ```bash
 python -m venv venv
 source .ven/bin/activate
@@ -65,7 +66,7 @@ source .ven/bin/activate
 
 ### 3. Installer les dépendances
 
-```powershell
+```powershell et bash
 pip install -r requirements.txt
 ```
 
@@ -83,7 +84,7 @@ DJANGO_SECRET_KEY=votre-cle-secrete-django
 
 Depuis le dossier `portfolio/` :
 
-```powershell
+```powershell et bash
 cd portfolio
 python manage.py migrate
 python manage.py runserver

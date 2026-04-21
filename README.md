@@ -47,7 +47,7 @@ Avant de lancer le projet, assurez-vous d'avoir :
 
 ### 1. Cloner le projet
 
-```powershell
+```powershell et bash
 git clone <url-du-depot>
 cd Portfolio
 ```
@@ -57,6 +57,10 @@ cd Portfolio
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
+```
+```bash
+python -m venv venv
+source .ven/bin/activate
 ```
 
 ### 3. Installer les dépendances

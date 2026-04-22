@@ -1,5 +1,7 @@
-from django.db import models
+from random import choices
 
+from django.db import models
+from django.db.models import Model
 
 
 # Create your models here.
@@ -78,4 +80,27 @@ class Langue(models.Model):
 
     def __str__(self):
         return self.langue
+class Document(models.Model):
+    TYPE_DOC = [
+        ('CV','CV'),
+        ('Carte Visite','Carte Visite')
+    ]
+    type_document = models.CharField(max_length=50,choices=TYPE_DOC,default="CV")
+
+    document = models.FileField(upload_to=f"Documents/")
+
+# TODO : Injecter les permis français automatiquement lors de la première creation de la base de donnée
+class Permis(models.Model):
+    permis = models.CharField(max_length=50)
+
+
+class RenseignementsPersonnel(models.Model):
+    nom = models.CharField(max_length=50)
+    prenom = models.CharField(max_length=100)
+    age = models.IntegerField()
+    adresse = models.CharField(max_length=250)
+    numero_telephone = models.CharField(max_length=14)
+    e_mail = models.EmailField()
+    permis = models.ManyToManyField(Permis)
+    lien_reseau_social = models.URLField()
 

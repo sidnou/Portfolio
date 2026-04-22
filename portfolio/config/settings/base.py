@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 import environ
-from django.conf.global_settings import MEDIA_URL
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-print(f"## {BASE_DIR} ##")
 # Fichier .env
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR,'.env'))

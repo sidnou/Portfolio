@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Experience, Competence, Langue
+from .models import Experience, Competence, Langue, Document, RenseignementsPersonnel
 
 
 # Register your models here.
@@ -14,3 +14,12 @@ class CompetencesAdmin(admin.ModelAdmin):
 @admin.register(Langue)
 class LangueAdmin(admin.ModelAdmin):
     ...
+
+@admin.register(Document)
+class DocumentAdmin(admin.ModelAdmin):
+    ...
+
+@admin.register(RenseignementsPersonnel)
+class RenseignementsPersonnelAdmin(admin.ModelAdmin):
+    ...
+

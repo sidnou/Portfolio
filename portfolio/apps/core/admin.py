@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Experience, Competences
+from .models import Experience, Competence, Langue
 
 
 # Register your models here.
@@ -7,6 +7,10 @@ from .models import Experience, Competences
 class ExperienceAdmin(admin.ModelAdmin):
     ...
 
-@admin.register(Competences)
+@admin.register(Competence)
 class CompetencesAdmin(admin.ModelAdmin):
+    ...
+
+@admin.register(Langue)
+class LangueAdmin(admin.ModelAdmin):
     ...

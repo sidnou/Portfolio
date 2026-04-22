@@ -3,6 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Experience(models.Model):
+    date_debut = models.DateField()
+    
     ...
 
 

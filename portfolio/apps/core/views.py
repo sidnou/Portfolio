@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
+MENUS = {
+    "ExperienceS":"{% url 'experiences'%}"
+}
+
 # Create your views here.
 def accueil(request):
     context = {

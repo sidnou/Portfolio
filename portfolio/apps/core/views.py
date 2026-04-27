@@ -1,7 +1,11 @@
 from django.shortcuts import render
 
 MENUS = {
-    "ExperienceS":"{% url 'experiences'%}"
+    "ExperienceS":"{% url 'experiences' %}",
+    "Competences":"{% url 'Competences' %}",
+    "Certifications":"",
+    "Formations":"",
+
 }
 
 # Create your views here.

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 MENUS = {
-    "ExperienceS":"{% url 'experiences' %}",
+    "Experiences":"{% url 'experiences' %}",
     "Competences":"{% url 'Competences' %}",
     "Certifications":"",
     "Formations":"",
@@ -12,7 +12,8 @@ MENUS = {
 def accueil(request):
     context = {
         "Titre" : "Portfolio",
-        "Version" : "0.0.01"
+        "Version" : "0.0.01",
+        "menus" : MENUS,
     }
     return render(request,'core/index.html',context)
 

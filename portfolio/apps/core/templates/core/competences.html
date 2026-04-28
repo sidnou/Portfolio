@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>{{ Titre }}</h1>
+    <div>
+
+        {% for competence in Competences %}
+            <p>
+                {{ competence.competence }}
+            </p>
+        {% endfor %}
+    </div>
 {% endblock %}

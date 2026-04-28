@@ -1,8 +1,9 @@
 <div>
     <ul>
-        <li><a href="{% url 'experiences' %}">Experiences</a></li>
-        <li><a href="{% url 'competences' %}">Compétences</a></li>
-        <li><a href="{% url 'formations' %}">Formations</a></li>
-        <li><a href="{% url 'certificats' %}">Certification</a></li>
+        {# Simplification du menu #}
+        {% for menu in Menus %}
+            <li><a href="{% url menu.url %}">{{ menu.nom }}</a></li>
+        {% endfor %}
+
     </ul>
 </div>

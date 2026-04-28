@@ -1,4 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-	<h1>{{ Titre }}</h1>
+    <h1>{{ Titre }}</h1>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Entreprise</th>
+                <th>Poste</th>
+                <th>Fonctions ou Roles</th>
+                <th>Type Poste</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for experience in Experiences %}
+            <tr>
+                <td>{{ experience.date_debut }}| {% if experience.date_fin == None  %}Aujourd'hui{% endif %} </td>
+                <td>{{ experience.entreprise }}</td>
+                <td>{{ experience.poste }}</td>
+                <td>{{ experience.fonctions_roles }}</td>
+                <td>{{ experience.type_poste }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

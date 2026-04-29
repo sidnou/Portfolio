@@ -1,6 +1,7 @@
 <div>
     <ul>
         {# Simplification du menu #}
+{#            {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}#}
         {% for menu in Menus %}
             <li><a href="{% url menu.url %}">{{ menu.nom }}</a></li>
         {% endfor %}

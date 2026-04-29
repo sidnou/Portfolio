@@ -1,8 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>{{ Titre }}</title>
+    <link rel="stylesheet" href="{% static '/static/css/bootstrap.css' %}">
+    {# Load CSS and JavaScript #}
+    
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
 <body>
 

@@ -1,8 +1,8 @@
-<div>
+<div class="m-2">
     <ul>
         {# Simplification du menu #}
         {% for menu in Menus %}
-            <li><a href="{% url menu.url %}">{{ menu.nom }}</a></li>
+            <li class="m-1 p-1"><a class="text-lg text-white font-bold" href="{% url menu.url %}">{{ menu.nom }}</a></li>
         {% endfor %}
 
     </ul>

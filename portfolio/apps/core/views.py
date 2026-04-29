@@ -4,7 +4,7 @@ from .models import Experience, Competence, Langue, Hobbie, Loisir, Formation, P
 
 # TODO: A faire plus utile et optimisé
 MENUS = (
-    {"url":"accueil","nom":"Portfolio"},
+    {"url":"accueil","nom":"Accueil"},
     {"url":'experiences' ,"nom":"Experiences"},
     {"url":'competences' ,"nom":"Competences"},
     {"url":'cv',"nom":"CV"},

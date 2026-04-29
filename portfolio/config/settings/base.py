@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     ## apps
     'apps.core',
+    "tailwind",
+    "theme",
+
 ]
 
 MIDDLEWARE = [
@@ -125,3 +128,7 @@ STATIC_URL = 'static/'
 
 # Media
 MEDIA_URL = 'media/'
+
+
+
+TAILWIND_APP_NAME = "theme"

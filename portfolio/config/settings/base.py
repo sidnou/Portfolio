@@ -117,5 +117,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+print(BASE_DIR)
 # Media
 MEDIA_URL = 'media/'

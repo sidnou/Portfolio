@@ -10,26 +10,29 @@
 <body>
 <div class="h-lvh w-full flex flex-col">
 
-    <div class="flex flex-row ">
-        <div class="bg-emerald-500">
+    <div class="flex flex-row">
+        <div class="bg-emerald-500 fixed left=0">
             <div class="w-50  h-dvh max-lg:invisible max-lg:w-12">
                 {% include "menus.html" %}
 
             </div>
 
         </div>
-        <div class="w-full bg-green-500">
-            <div class="justify-center text-center">
-                {% block content %}
+        <div class="h-dvh w-full ml-50 max-lg:ml-12">
 
-                {% endblock %}
+            <div class="bg-green-500">
+                <div class="justify-center text-center">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<div class=" h-48 flex bg-amber-500/80 justify-center items-center max-lg:h-24">
+<div class=" sticky ml-50  bottom-0 h-48 flex bg-amber-500/80 justify-center items-center max-lg:h-24">
 
     <footer class="text-gray-400">
         <p>© 2026 Jacques-a S</p>

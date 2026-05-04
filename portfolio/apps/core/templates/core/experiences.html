@@ -3,33 +3,36 @@
     <div class=" text-2xl font-bold text-white">
         <h1>{{ Titre }}</h1>
     </div>
-    <div class="flex justify-center m-4">
-        <div class="overflow-hidden border border-indigo-500 rounded-xl">
-
-            <table class="bg-gray-200 w-dvh ">
-
-                <thead class="bg-indigo-600 text-white h-12 ">
-                <tr>
-                    <th class="">Date</th>
-                    <th class="">Entreprise</th>
-                    <th class="">Poste</th>
-                    <th class="">Fonctions ou Roles</th>
-                    <th class="">Type Poste</th>
+    <div class="mt-6 w-full overflow-x-auto rounded-xl border border-indigo-500/60 shadow-lg">
+        <table class="w-full min-w-max text-sm text-left">
+            <thead class="bg-indigo-600 text-white">
+            <tr>
+                <th class="px-4 py-3 font-semibold whitespace-nowrap">Date</th>
+                <th class="px-4 py-3 font-semibold whitespace-nowrap">Entreprise</th>
+                <th class="px-4 py-3 font-semibold whitespace-nowrap">Poste</th>
+                <th class="px-4 py-3 font-semibold">Fonctions ou Rôles</th>
+                <th class="px-4 py-3 font-semibold whitespace-nowrap">Type de poste</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700 bg-slate-800/60">
+            {% for experience in Experiences %}
+                <tr class="transition hover:bg-indigo-500/10">
+                    <td class="px-4 py-3 whitespace-nowrap text-slate-300">
+                        {{ experience.date_debut }} — {% if experience.date_fin == None %}Aujourd'hui{% else %}{{ experience.date_fin }}{% endif %}
+                    </td>
+                    <td class="px-4 py-3 font-medium text-white">{{ experience.entreprise }}</td>
+                    <td class="px-4 py-3 text-slate-200">{{ experience.poste }}</td>
+                    <td class="px-4 py-3 text-slate-300">{{ experience.fonctions_roles }}</td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <span class="inline-block rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-medium text-indigo-300">{{ experience.type_poste }}</span>
+                    </td>
                 </tr>
-                </thead>
-                <tbody class="h-13">
-                {% for experience in Experiences %}
-                    <tr>
-                        <td>{{ experience.date_debut }}| {% if experience.date_fin == None %}
-                            Aujourd'hui{% endif %} </td>
-                        <td>{{ experience.entreprise }}</td>
-                        <td>{{ experience.poste }}</td>
-                        <td>{{ experience.fonctions_roles }}</td>
-                        <td>{{ experience.type_poste }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+            {% empty %}
+                <tr>
+                    <td colspan="5" class="px-4 py-8 text-center text-slate-500">Aucune expérience renseignée.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

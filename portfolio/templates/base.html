@@ -4,39 +4,47 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>{{ Titre }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% tailwind_css %}
+    <title>{{ Titre }}</title>
 </head>
-<body>
-<div class="h-lvh w-full flex flex-col">
+<body class="bg-slate-950 text-slate-100 antialiased ">
+<div style="background-image: url('{% static 'images/Image_font.png' %}')" class="bg-cover bg-center">
 
-    <div class="flex flex-row">
-        <div class="bg-emerald-500 fixed left=0">
-            <div class="w-50  h-dvh max-lg:invisible max-lg:w-12">
-                {% include "menus.html" %}
-
+    <div class="min-h-screen lg:grid lg:grid-cols-[17rem_1fr]">
+        <aside class="hidden h-screen border-r border-slate-800/80 bg-slate-900/70 backdrop-blur lg:block">
+            <div class="flex h-full flex-col p-6">
+                <div class="flex-1 overflow-y-auto">
+                    {% include "menus.html" %}
+                </div>
+                <div class="mt-8">
+                    <h1 class="text-2xl font-semibold tracking-tight text-white">Portfolio</h1>
+                    <p class="mt-1 text-sm text-slate-400">Version {{ Version|default:"0.0.01" }}</p>
+                </div>
             </div>
+        </aside>
 
-        </div>
-        <div class="h-dvh w-full ml-50 max-lg:ml-12">
+        <div class="flex min-h-screen flex-col">
+            <header class="border-b border-slate-800/80 bg-slate-900/70 px-4 py-4 backdrop-blur lg:hidden">
+                <h1 class="text-lg font-semibold text-white">Portfolio</h1>
+                <div class="mt-3">
+                    {% include "menus.html" %}
+                </div>
+            </header>
 
-            <div class="bg-green-500">
-                <div class="justify-center text-center">
+            <main class="flex-1 px-4 py-8 sm:px-6 lg:px-10">
+                <div class="w-full rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-2xl shadow-black/25 sm:p-8">
                     {% block content %}
 
                     {% endblock %}
                 </div>
-            </div>
+            </main>
+
+            <footer class="border-t border-slate-800/80 bg-slate-900/70 px-4 py-5 text-center text-sm text-slate-400 backdrop-blur sm:px-8 lg:px-12">
+                <p>© 2026 Jacques-a S</p>
+            </footer>
         </div>
     </div>
-</div>
-
-
-<div class=" sticky ml-50  bottom-0 h-48 flex bg-amber-500/80 justify-center items-center max-lg:h-24">
-
-    <footer class="text-gray-400">
-        <p>© 2026 Jacques-a S</p>
-    </footer>
 </div>
 </body>
 </html>

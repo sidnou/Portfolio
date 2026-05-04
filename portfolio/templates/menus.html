@@ -1,9 +1,14 @@
-<div class="m-2">
-    <ul>
-        {# Simplification du menu #}
+<nav aria-label="Menu principal">
+    <ul class="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
         {% for menu in Menus %}
-            <li class="m-1 p-1"><a class="text-lg text-white font-bold" href="{% url menu.url %}">{{ menu.nom }}</a></li>
+            <li>
+                <a class="group inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-emerald-500/20 hover:text-emerald-300" href="{% url menu.url %}">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400/60 transition group-hover:bg-emerald-300"></span>
+                    <span>{{ menu.nom }}</span>
+                </a>
+            </li>
+        {% empty %}
+            <li class="px-3 py-2 text-sm text-slate-500">Aucun menu disponible.</li>
         {% endfor %}
-
     </ul>
-</div>
+</nav>

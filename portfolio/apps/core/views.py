@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Experience, Competence, Langue, Hobbie, Loisir, Formation, Permis, Certificat, \
-    RenseignementsPersonnel
+    RenseignementsPersonnel, DescriptionPersonnel
 
 # TODO: A faire plus utile et optimisé
 MENUS = (
@@ -30,6 +30,7 @@ def a_propos(request):
         "Version": VERSION,
         'Menus': MENUS,
         'A_propos' : RenseignementsPersonnel.objects.all(),
+        "Descriptions_perso" :DescriptionPersonnel.objects.all(),
         'Permis': Permis.objects.all(),
     }
     return render(request,'core/a-propos.html',context)

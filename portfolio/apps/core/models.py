@@ -2,18 +2,20 @@ from django.db import models
 
 
 # Create your models here.
+
+class TypePoste(models.TextChoices):
+    CDI = 'CDI','CDI'
+    CDD = 'CDD','CDD'
+    MISSION = 'MISSION','MISSION'
+    STAGE = 'STAGE','STAGE'
+
 class Experience(models.Model):
-    TYPE_POSTE = [
-        ('CDI', 'CDI'),
-        ('CDD', 'CDD'),
-        ('MISSION', 'MISSION'),
-    ]
     entreprise = models.CharField(max_length=50)
     date_debut = models.DateField()
     date_fin = models.DateField(null=True, blank=True)
     poste = models.CharField(max_length=50)
     fonctions_roles = models.CharField(max_length=250)
-    type_poste = models.CharField(max_length=25, choices=TYPE_POSTE)
+    type_poste = models.CharField(max_length=25, choices=TypePoste)
 
     def __str__(self):
         return f"{self.poste}"
@@ -43,7 +45,7 @@ class Formation(models.Model):
     def __str__(self):
         return f"{self.date} {self.nom_formation}"
 
-
+#  TODO : A simplifier avec une class et TextChoices
 class Langue(models.Model):
     LANGUE = [
         ("Allemand", "Allemand"),
@@ -85,6 +87,7 @@ class Langue(models.Model):
     def __str__(self):
         return self.langue
 
+#  TODO : A simplifier avec une class et TextChoices
 
 class Document(models.Model):
     TYPE_DOC = [
